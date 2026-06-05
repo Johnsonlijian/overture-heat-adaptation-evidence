@@ -1,0 +1,110 @@
+{
+  "date": "2026-06-04",
+  "nyc_open_data_sources": {
+    "Hyperlocal Temperature Monitoring": "https://data.cityofnewyork.us/resource/qdq3-9eqn.json",
+    "Municipal Solar-Readiness Assessment": "https://data.cityofnewyork.us/resource/cfz5-6fvh.json",
+    "Buildings Selected for the Heat Sensor Program": "https://data.cityofnewyork.us/resource/h4mf-f24e.json",
+    "DEP Green Infrastructure Point Layer": "https://data.cityofnewyork.us/resource/df32-vzax.json"
+  },
+  "sensor_summary": {
+    "sensor_locations": 423,
+    "mean_airtemp_f_min": 73.36,
+    "mean_airtemp_f_median": 75.86,
+    "mean_airtemp_f_max": 79.68,
+    "mean_airtemp_f_p95_minus_p05": 2.66,
+    "building_pairs_with_sensor_within_1km": 283,
+    "unique_sensors_linked_to_buildings": 56
+  },
+  "heat_weighted_priority_surveyed_truth_subset": {
+    "truth_eligible_buildings": 118,
+    "model_eligible_buildings": 280,
+    "top_priority_k": 12,
+    "retained_truth_top_buildings": 2,
+    "building_recall_pct": 16.67,
+    "truth_top_heat_weighted_score": 20485.8,
+    "model_top_heat_weighted_score": 44036.3,
+    "retained_truth_top_heat_weighted_score": 8632.1,
+    "heat_weighted_score_recall_pct": 42.14,
+    "truth_top_roof_area_m2": 24832.3,
+    "retained_truth_top_roof_area_m2": 9005.8,
+    "roof_area_recall_pct": 36.27,
+    "false_priority_model_top_score": 35404.3,
+    "false_priority_share_of_model_top_score_pct": 80.4,
+    "jaccard_buildings": 0.091
+  },
+  "heat_weighted_priority_all_overture_native_layer": {
+    "truth_eligible_buildings": 23830,
+    "model_eligible_buildings": 30825,
+    "top_priority_k": 2383,
+    "retained_truth_top_buildings": 860,
+    "building_recall_pct": 36.09,
+    "truth_top_heat_weighted_score": 1874505.9,
+    "model_top_heat_weighted_score": 3431456.5,
+    "retained_truth_top_heat_weighted_score": 1447806.6,
+    "heat_weighted_score_recall_pct": 77.24,
+    "truth_top_roof_area_m2": 1918248.8,
+    "retained_truth_top_roof_area_m2": 1407908.6,
+    "roof_area_recall_pct": 73.4,
+    "false_priority_model_top_score": 1983649.9,
+    "false_priority_share_of_model_top_score_pct": 57.81,
+    "jaccard_buildings": 0.22
+  },
+  "operational_overture_heat_layer_summary": {
+    "all_overture_buildings_with_sensor_within_1km": 31197,
+    "unique_sensors_linked_to_all_overture": 165,
+    "overture_native_height_available_pct": 99.34,
+    "ghs_agbh_available_pct": 100.0,
+    "height_pair_buildings": 30989,
+    "surveyed_tier_pct": 0.91
+  },
+  "municipal_outcome_summary": [
+    {
+      "dataset": "Constructed DEP green roofs",
+      "records_with_coordinates": 121,
+      "strict_overture_matches": 71,
+      "strict_match_pct": 58.68,
+      "actionable_records_matched": 71,
+      "overture_height_available_pct_actionable": 94.37,
+      "surveyed_tier_pct_actionable": 15.49,
+      "ghs_agbh_available_pct_actionable": 100.0,
+      "surveyed_actionable_pairs_for_ghs_error": 11,
+      "surveyed_vs_ghs_mae_m": 36.26,
+      "surveyed_vs_ghs_bias_m": -35.01,
+      "surveyed_lowrise_disagreement_pct": 54.55
+    },
+    {
+      "dataset": "Heat Sensor Program buildings",
+      "records_with_coordinates": 200,
+      "strict_overture_matches": 51,
+      "strict_match_pct": 25.5,
+      "actionable_records_matched": 51,
+      "overture_height_available_pct_actionable": 100.0,
+      "surveyed_tier_pct_actionable": 0.0,
+      "ghs_agbh_available_pct_actionable": 100.0,
+      "surveyed_actionable_pairs_for_ghs_error": 0,
+      "surveyed_vs_ghs_mae_m": NaN,
+      "surveyed_vs_ghs_bias_m": NaN,
+      "surveyed_lowrise_disagreement_pct": NaN
+    },
+    {
+      "dataset": "Municipal solar-readiness",
+      "records_with_coordinates": 6455,
+      "strict_overture_matches": 1976,
+      "strict_match_pct": 30.61,
+      "actionable_records_matched": 433,
+      "overture_height_available_pct_actionable": 96.77,
+      "surveyed_tier_pct_actionable": 3.93,
+      "ghs_agbh_available_pct_actionable": 100.0,
+      "surveyed_actionable_pairs_for_ghs_error": 17,
+      "surveyed_vs_ghs_mae_m": 41.04,
+      "surveyed_vs_ghs_bias_m": -40.26,
+      "surveyed_lowrise_disagreement_pct": 64.71
+    }
+  ],
+  "matching": {
+    "buildings_to_nearest_temperature_sensor_m": 1000.0,
+    "municipal_points_to_nearest_overture_building_m": 50.0,
+    "roof_eligible_height_threshold_m": 15.0
+  },
+  "boundary": "The temperature field is empirical nearest-sensor interpolation from street-level sensors, not a physics urban-canopy or LCZ model. Municipal records are real programme inventories; the analysis tests vertical-evidence adequacy for auditing/prioritising those inventories, not causal programme effectiveness."
+}

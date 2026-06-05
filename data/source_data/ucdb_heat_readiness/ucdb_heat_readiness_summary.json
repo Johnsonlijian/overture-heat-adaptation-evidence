@@ -1,0 +1,75 @@
+{
+  "date": "2026-06-03",
+  "frame": "GHS-UCDB R2024A fixed 2025 polygons, n=300",
+  "overture_release": "2026-05-20.0",
+  "n_sample": 300,
+  "n_complete_overture": 300,
+  "n_retained_buildings_ge200_power_ok": 295,
+  "total_buildings_retained": 43942219,
+  "median_height_pct": 0.0019,
+  "median_vertical_evidence_pct": 0.0897,
+  "pct_centres_below_1pct_height": 86.44,
+  "pct_centres_below_5pct_height": 91.53,
+  "population_weighted_below_5pct_height": 92.9,
+  "hot_days_ge35_median": 11.0,
+  "hot_days_ge35_top_quartile_cutoff": 66.5,
+  "n_heat_readiness_mismatch": 73,
+  "population_heat_readiness_mismatch_m": 66.37,
+  "pct_population_heat_readiness_mismatch": 25.46,
+  "by_region": [
+    {
+      "ucdb_region": "Australia and New Zealand",
+      "n": 1,
+      "median_height_pct": 73.897,
+      "median_hot_days_ge35": 4.0
+    },
+    {
+      "ucdb_region": "Central and Southern Asia",
+      "n": 71,
+      "median_height_pct": 0.0,
+      "median_hot_days_ge35": 49.0
+    },
+    {
+      "ucdb_region": "Eastern and South-Eastern Asia",
+      "n": 84,
+      "median_height_pct": 0.0014,
+      "median_hot_days_ge35": 0.0
+    },
+    {
+      "ucdb_region": "Europe",
+      "n": 30,
+      "median_height_pct": 1.0406,
+      "median_hot_days_ge35": 0.0
+    },
+    {
+      "ucdb_region": "Latin America and the Caribbean",
+      "n": 29,
+      "median_height_pct": 0.003,
+      "median_hot_days_ge35": 28.0
+    },
+    {
+      "ucdb_region": "Northern Africa and Western Asia",
+      "n": 26,
+      "median_height_pct": 0.001,
+      "median_hot_days_ge35": 55.5
+    },
+    {
+      "ucdb_region": "Northern America",
+      "n": 11,
+      "median_height_pct": 78.8737,
+      "median_hot_days_ge35": 15.0
+    },
+    {
+      "ucdb_region": "Oceania",
+      "n": 1,
+      "median_height_pct": 15.3024,
+      "median_hot_days_ge35": 0.0
+    },
+    {
+      "ucdb_region": "Sub-Saharan Africa",
+      "n": 42,
+      "median_height_pct": 0.0,
+      "median_hot_days_ge35": 25.0
+    }
+  ]
+}

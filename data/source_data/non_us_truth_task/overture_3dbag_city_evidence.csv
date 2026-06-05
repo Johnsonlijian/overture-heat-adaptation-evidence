@@ -1,0 +1,3 @@
+comparison,city_name,unique_truth_matched_buildings,truth_height_coverage_pct,native_overture_height_coverage_pct,native_overture_vertical_evidence_pct,matched_no_native_height_but_truth_height_pct
+Overture native vs 3DBAG official truth,Arnhem,9192,100.0,0.1305483028720626,2.567449956483899,99.86945169712794
+Overture native vs 3DBAG official truth,Groningen,12767,100.0,0.2584788908905773,5.811858698206313,99.74152110910944

@@ -1,0 +1,12 @@
+geopandas
+matplotlib
+numpy
+overturemaps
+pandas
+pyogrio
+pyarrow
+pyproj
+rasterio
+requests
+scipy
+shapely

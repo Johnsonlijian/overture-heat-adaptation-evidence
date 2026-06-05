@@ -1,0 +1,2 @@
+comparison,city_name,unique_truth_matched_buildings,truth_height_coverage_pct,gba_height_coverage_pct,height_mae_m,height_bias_m,height_median_abs_error_m,pearson_r,median_nearest_distance_m,median_area_ratio_reference_to_gba
+GlobalBuildingAtlas Arnhem vs 3DBAG official truth,Arnhem 3DBAG window,9195,100.0,100.0,1.5319435807247457,-0.6084603531672373,1.2056155204772994,0.7712754069178008,0.006024640066688,1.0000433875991477

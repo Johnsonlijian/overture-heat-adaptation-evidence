@@ -1,0 +1,4 @@
+dataset,records_with_coordinates,strict_overture_matches,strict_match_pct,actionable_records_matched,overture_height_available_pct_actionable,surveyed_tier_pct_actionable,ghs_agbh_available_pct_actionable,surveyed_actionable_pairs_for_ghs_error,surveyed_vs_ghs_mae_m,surveyed_vs_ghs_bias_m,surveyed_lowrise_disagreement_pct
+Constructed DEP green roofs,121,71,58.68,71,94.37,15.49,100.0,11,36.26,-35.01,54.55
+Heat Sensor Program buildings,200,51,25.5,51,100.0,0.0,100.0,0,,,
+Municipal solar-readiness,6455,1976,30.61,433,96.77,3.93,100.0,17,41.04,-40.26,64.71

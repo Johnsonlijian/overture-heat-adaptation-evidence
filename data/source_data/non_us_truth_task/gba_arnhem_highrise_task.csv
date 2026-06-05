@@ -1,0 +1,4 @@
+threshold_m,truth_trigger_n,model_trigger_n,tp_n,fp_n,fn_n,recall_pct,precision_pct,missed_share_pct,no_native_height_share_of_truth_trigger_pct,truth_trigger_area_m2,model_trigger_area_m2,tp_area_m2,area_recall_pct,false_positive_share_of_model_trigger_pct,comparison,city_name
+20.0,26,22,18,4,8,69.23076923076923,81.81818181818183,30.76923076923077,0.0,31970.8017578125,29975.754638671875,21862.9189453125,68.38401836441277,18.181818181818183,GlobalBuildingAtlas Arnhem vs 3DBAG official truth,Arnhem 3DBAG window
+30.0,12,10,7,3,5,58.333333333333336,70.0,41.66666666666667,0.0,13037.546630859377,14889.946044921877,9640.880859375,73.94704795575115,30.0,GlobalBuildingAtlas Arnhem vs 3DBAG official truth,Arnhem 3DBAG window
+50.0,2,0,0,0,2,0.0,,100.0,0.0,2528.376708984375,0.0,0.0,0.0,,GlobalBuildingAtlas Arnhem vs 3DBAG official truth,Arnhem 3DBAG window

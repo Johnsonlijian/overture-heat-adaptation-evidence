@@ -1,0 +1,26 @@
+﻿.venv/
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+
+# Raw third-party data are intentionally excluded.
+data/raw/
+data/external/
+*.geojsonseq
+*.geojson
+*.gpkg
+*.zip
+*.tif
+*.nc
+
+# Private submission material is excluded.
+manuscript/
+cover_letter/
+submission*/
+rounds/
+logs/
+*.docx
+
+# Keep the public repository lightweight; production figure PDF/PNG files are in the submission package.
+figures/*.pdf
+figures/*.png

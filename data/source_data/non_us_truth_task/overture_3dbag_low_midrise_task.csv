@@ -1,0 +1,3 @@
+truth_eligible_n,model_eligible_n,tp_n,fp_n,fn_n,tn_n,recall_pct,precision_pct,false_positive_share_of_model_eligible_pct,truth_eligible_area_m2,model_eligible_area_m2,tp_area_m2,fp_area_m2,fn_area_m2,area_recall_pct,area_precision_pct,false_positive_share_of_model_eligible_area_pct,comparison,city_name
+9155,9,9,0,9146,37,0.0983069361004915,100.0,0.0,520610.9177246094,1833.760498046875,1833.760498046875,0.0,518777.1572265625,0.3522324322473948,100.0,0.0,Overture native vs 3DBAG official truth,Arnhem
+12373,6,6,0,12367,394,0.0484926856865756,100.0,0.0,1041343.4497070312,1633.9716796875,1633.9716796875,0.0,1039709.4780273438,0.1569099685744599,100.0,0.0,Overture native vs 3DBAG official truth,Groningen

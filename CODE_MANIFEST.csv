@@ -1,0 +1,26 @@
+file,bytes,role
+scripts/s01_source_provenance_audit.py,9041,review-facing reproducibility script
+scripts/s02_cloud_provenance_replication.py,7226,review-facing reproducibility script
+scripts/s03_height_reliability_grading.py,5843,review-facing reproducibility script
+scripts/s04_new_york_height_accuracy.py,7838,review-facing reproducibility script
+scripts/s05_reliability_accuracy_figure.py,12039,review-facing reproducibility script
+scripts/s06_ucdb_sample_frame.py,10426,review-facing reproducibility script
+scripts/s07_overture_building_query.py,12054,review-facing reproducibility script
+scripts/s08_new_york_decision_distortion.py,13002,review-facing reproducibility script
+scripts/s09_ucdb_heat_readiness.py,12112,review-facing reproducibility script
+scripts/s10_3dbag_truth_windows.py,21516,review-facing reproducibility script
+scripts/s11_ghs_obat_benchmark.py,12018,review-facing reproducibility script
+scripts/s12_new_york_roof_area_intervention.py,13734,review-facing reproducibility script
+scripts/s13_globalbuildingatlas_benchmark.py,19329,review-facing reproducibility script
+scripts/s14_nyc_measured_heat_municipal.py,30847,review-facing reproducibility script
+scripts/s15_supplementary_lcz_context_figure.py,5179,review-facing reproducibility script
+scripts/s16_entry_gate_figure.py,6739,review-facing reproducibility script
+scripts/s17_global_heat_readiness_figure.py,8386,review-facing reproducibility script
+scripts/s18_task_consequence_figure.py,8179,review-facing reproducibility script
+scripts/s19_population_weighted_global_figure.py,8357,review-facing reproducibility script
+scripts/s20_synthesis_figure.py,8339,review-facing reproducibility script
+scripts/s21_trigger_provenance_decomposition.py,12811,review-facing reproducibility script
+scripts/s22_non_us_truth_task_checks.py,21178,review-facing reproducibility script
+scripts/s23_submission_strength_figures.py,14473,review-facing reproducibility script
+scripts/s24_trigger_city_stage1_bridge.py,23654,review-facing reproducibility script
+scripts/s25_final_main_figures.py,17878,review-facing reproducibility script

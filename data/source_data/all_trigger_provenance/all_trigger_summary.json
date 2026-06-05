@@ -1,0 +1,65 @@
+{
+  "date": "2026-06-04",
+  "subset": "all retained UCDB validation-trigger centres",
+  "definition": "T2M_MAX >=35 C hot days in top quartile and native height availability below 5%",
+  "n_trigger_centres_from_r14": 73,
+  "n_centres_parsed": 73,
+  "missing_cache": [],
+  "total_exact_intersecting_buildings": 8704396,
+  "total_height_bearing_buildings": 2863,
+  "aggregate_height_pct": 0.032891,
+  "total_vertical_evidence_buildings": 106151,
+  "aggregate_vertical_evidence_pct": 1.21951,
+  "centres_with_zero_height": 49,
+  "centres_below_1pct_height": 72,
+  "median_height_pct": 0.0,
+  "median_vertical_evidence_pct": 0.003946,
+  "median_osm_geometry_share_pct": 2.79,
+  "median_google_open_buildings_share_pct": 24.05,
+  "median_microsoft_ml_geometry_share_pct": 34.84,
+  "median_distinct_geometry_sources": 3.0,
+  "geometry_sources": [
+    {
+      "source": "Google Open Buildings",
+      "n_buildings": 4646966,
+      "share_pct": 53.3864
+    },
+    {
+      "source": "Microsoft ML Buildings",
+      "n_buildings": 3130089,
+      "share_pct": 35.9599
+    },
+    {
+      "source": "OpenStreetMap",
+      "n_buildings": 927341,
+      "share_pct": 10.6537
+    }
+  ],
+  "height_sources": [
+    {
+      "source": "OpenStreetMap",
+      "n_height": 2781,
+      "share_pct": 97.1359
+    },
+    {
+      "source": "Microsoft ML Buildings",
+      "n_height": 82,
+      "share_pct": 2.8641
+    }
+  ],
+  "top_geometry_source_by_centre": [
+    {
+      "top_geometry_source": "Microsoft ML Buildings",
+      "centres": 28
+    },
+    {
+      "top_geometry_source": "Google Open Buildings",
+      "centres": 26
+    },
+    {
+      "top_geometry_source": "OpenStreetMap",
+      "centres": 19
+    }
+  ],
+  "boundary": "Mechanism audit for the validation-trigger class; not a design-weighted global extrapolation."
+}
