@@ -142,7 +142,7 @@ def make_fig1() -> None:
     ax_scatter = fig.add_subplot(gs[2, 2:])
 
     ax_title.axis("off")
-    ax_title.text(0, 0.78, "Fig. 1 | The vertical evidence gap is a geography of heat-adaptation capacity", fontsize=14, weight="bold", color=COL["ink"])
+    ax_title.text(0, 0.78, "Fig. 1 | Heat-exposed mapped cities lack native vertical evidence", fontsize=14, weight="bold", color=COL["ink"])
     ax_title.text(
         0,
         0.24,
@@ -323,10 +323,10 @@ def make_fig5() -> None:
     plot = plot.sort_values("top_decile_overlap_pct", ascending=True)
     y = np.arange(len(plot))
     ax_c.barh(y, plot["top_decile_overlap_pct"], color=COL["blue"], label="same top decile")
-    ax_c.barh(y, plot["false_priority_count_share_pct"], left=plot["top_decile_overlap_pct"], color=COL["red"], label="area-only false priority")
+    ax_c.barh(y, plot["discordant_count_share_pct"], left=plot["top_decile_overlap_pct"], color=COL["red"], label="area-only discordant list")
     for yi, (_, r) in enumerate(plot.iterrows()):
         ax_c.text(r["top_decile_overlap_pct"] / 2, yi, f"{r['top_decile_overlap_pct']:.1f}", ha="center", va="center", color="white", weight="bold", fontsize=7)
-        ax_c.text(r["top_decile_overlap_pct"] + r["false_priority_count_share_pct"] / 2, yi, f"{r['false_priority_count_share_pct']:.1f}", ha="center", va="center", color="white", weight="bold", fontsize=7)
+        ax_c.text(r["top_decile_overlap_pct"] + r["discordant_count_share_pct"] / 2, yi, f"{r['discordant_count_share_pct']:.1f}", ha="center", va="center", color="white", weight="bold", fontsize=7)
     ax_c.set_yticks(y, plot["city_name"])
     ax_c.set_xlim(0, 100)
     ax_c.set_xlabel("Area-only top decile versus height*area top decile (%)")
@@ -339,7 +339,7 @@ def make_fig5() -> None:
         {
             "Layer": ["surveyed truth\nsubset", "all-Overture\noperational"],
             "retained top buildings": [survey["building_recall_pct"], operational["building_recall_pct"]],
-            "false-priority score": [survey["false_priority_share_of_model_top_score_pct"], operational["false_priority_share_of_model_top_score_pct"]],
+            "discordant-list score": [survey["discordant_share_of_model_top_score_pct"], operational["discordant_share_of_model_top_score_pct"]],
             "retained priority score": [survey["heat_weighted_score_recall_pct"], operational["heat_weighted_score_recall_pct"]],
         }
     )
@@ -347,7 +347,7 @@ def make_fig5() -> None:
     w = 0.24
     ax_d.bar(x - w, dplot["retained top buildings"], width=w, color=COL["blue"], label="retained top buildings")
     ax_d.bar(x, dplot["retained priority score"], width=w, color=COL["teal"], label="retained priority score")
-    ax_d.bar(x + w, dplot["false-priority score"], width=w, color=COL["red"], label="false-priority score")
+    ax_d.bar(x + w, dplot["discordant-list score"], width=w, color=COL["red"], label="discordant-list score")
     ax_d.set_xticks(x, dplot["Layer"])
     ax_d.set_ylim(0, 100)
     for bars in ax_d.containers:

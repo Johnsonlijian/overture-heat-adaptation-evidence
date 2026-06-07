@@ -1,5 +1,5 @@
 """
-TRIGGER_VALIDATION non-US official-truth task-distortion checks.
+TRIGGER_VALIDATION non-US official-truth screening-list sensitivity checks.
 
 This script turns the Netherlands 3DBAG windows and the Arnhem
 GlobalBuildingAtlas comparison into task-facing diagnostics. It is deliberately
@@ -141,8 +141,8 @@ def top_decile_metrics(
             "top_n": 0,
             "retained_count_share_pct": float("nan"),
             "truth_score_retained_share_pct": float("nan"),
-            "false_priority_count_share_pct": float("nan"),
-            "model_score_false_priority_share_pct": float("nan"),
+            "discordant_count_share_pct": float("nan"),
+            "model_score_discordant_share_pct": float("nan"),
         }
     truth = truth_score.loc[valid]
     model = model_score.loc[valid]
@@ -150,7 +150,7 @@ def top_decile_metrics(
     truth_top = set(truth.nlargest(top_n).index)
     model_top = set(model.nlargest(top_n).index)
     retained = truth_top & model_top
-    false_priority = model_top - truth_top
+    discordant = model_top - truth_top
     truth_top_score = float(truth.loc[list(truth_top)].sum())
     model_top_score = float(model.loc[list(model_top)].sum())
     return {
@@ -158,11 +158,11 @@ def top_decile_metrics(
         "n_valid": int(len(d)),
         "top_n": int(top_n),
         "retained_n": int(len(retained)),
-        "false_priority_n": int(len(false_priority)),
+        "discordant_n": int(len(discordant)),
         "retained_count_share_pct": pct(len(retained), top_n),
         "truth_score_retained_share_pct": pct(float(truth.loc[list(retained)].sum()), truth_top_score),
-        "false_priority_count_share_pct": pct(len(false_priority), top_n),
-        "model_score_false_priority_share_pct": pct(float(model.loc[list(false_priority)].sum()), model_top_score),
+        "discordant_count_share_pct": pct(len(discordant), top_n),
+        "model_score_discordant_share_pct": pct(float(model.loc[list(discordant)].sum()), model_top_score),
     }
 
 
@@ -244,9 +244,9 @@ def overpass_native_task_metrics() -> tuple[pd.DataFrame, pd.DataFrame, pd.DataF
                     d.loc[truth_top_native_idx, "3dbag_truth_height_h70_m"].sum(),
                     d.loc[truth_top_idx, "3dbag_truth_height_h70_m"].sum(),
                 ),
-                "false_priority_n": np.nan,
-                "false_priority_count_share_pct": np.nan,
-                "model_score_false_priority_share_pct": np.nan,
+                "discordant_n": np.nan,
+                "discordant_count_share_pct": np.nan,
+                "model_score_discordant_share_pct": np.nan,
             }
         )
 
@@ -342,7 +342,7 @@ def write_markdown(
     gba_top: pd.DataFrame,
 ) -> None:
     lines = [
-        "# NON_US_TRUTH_TASK_CHECKS non-US official-truth task-distortion checks",
+        "# NON_US_TRUTH_TASK_CHECKS non-US official-truth screening-list sensitivity checks",
         "",
         "Scope: Netherlands official 3DBAG truth windows and GlobalBuildingAtlas Arnhem WFS window. These diagnostics test task readiness in official-truth windows; they are not global error estimates.",
         "",
@@ -430,14 +430,14 @@ def write_markdown(
         "",
         "### GBA priority-list preservation",
         "",
-        "| Score | Valid n | Top n | Retained count % | Truth score retained % | False-priority count % | Model score false-priority % |",
+        "| Score | Valid n | Top n | Retained count % | Truth score retained % | Discordant-list count % | Model score discordant-list % |",
         "| --- | ---: | ---: | ---: | ---: | ---: | ---: |",
     ]
     for r in gba_top.to_dict("records"):
         lines.append(
             f"| {r['score']} | {int(r['n_valid']):,} | {int(r['top_n']):,} | "
             f"{r['retained_count_share_pct']:.2f} | {r['truth_score_retained_share_pct']:.2f} | "
-            f"{r['false_priority_count_share_pct']:.2f} | {r['model_score_false_priority_share_pct']:.2f} |"
+            f"{r['discordant_count_share_pct']:.2f} | {r['model_score_discordant_share_pct']:.2f} |"
         )
 
     lines += [

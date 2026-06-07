@@ -314,8 +314,8 @@ def top_priority_metrics_from_cols(df: pd.DataFrame, reference_height_col: str, 
         "truth_top_roof_area_m2": round(truth_area, 1),
         "retained_truth_top_roof_area_m2": round(retained_area, 1),
         "roof_area_recall_pct": round(retained_area / max(truth_area, 1e-9) * 100, 2),
-        "false_priority_model_top_score": round(false_score, 1),
-        "false_priority_share_of_model_top_score_pct": round(false_score / max(model_score, 1e-9) * 100, 2),
+        "discordant_model_top_score": round(false_score, 1),
+        "discordant_share_of_model_top_score_pct": round(false_score / max(model_score, 1e-9) * 100, 2),
         "jaccard_buildings": round(len(retained) / max(len(truth_top | model_top), 1), 3),
     }
 
@@ -559,16 +559,16 @@ def make_figure(
     ax1.set_ylabel("Survey height (m)")
     ax1.set_title("B. Buildings linked to sensors", loc="left", fontsize=9)
 
-    metrics = ["building recall", "score recall", "false priority"]
+    metrics = ["building recall", "score recall", "discordant list"]
     surveyed_vals = [
         top["building_recall_pct"],
         top["heat_weighted_score_recall_pct"],
-        top["false_priority_share_of_model_top_score_pct"],
+        top["discordant_share_of_model_top_score_pct"],
     ]
     operational_vals = [
         operational_top["building_recall_pct"],
         operational_top["heat_weighted_score_recall_pct"],
-        operational_top["false_priority_share_of_model_top_score_pct"],
+        operational_top["discordant_share_of_model_top_score_pct"],
     ]
     y2 = np.arange(len(metrics))
     h = 0.34
@@ -653,13 +653,13 @@ def main() -> None:
         f"{sensor_summary['mean_airtemp_f_p95_minus_p05']} deg F.",
         f"- Heat-weighted roof top-list recall under GHS height substitute: "
         f"{top['building_recall_pct']}% of buildings and {top['heat_weighted_score_recall_pct']}% of "
-        f"heat-weighted priority score; false-priority score share {top['false_priority_share_of_model_top_score_pct']}%.",
+        f"heat-weighted priority score; discordant-list score share {top['discordant_share_of_model_top_score_pct']}%.",
         f"- Operational all-Overture heat layer: {operational_summary['all_overture_buildings_with_sensor_within_1km']:,} "
         f"buildings within {SENSOR_MATCH_DISTANCE_M:.0f} m of a sensor; native height available "
         f"{operational_summary['overture_native_height_available_pct']}%, GHS available "
         f"{operational_summary['ghs_agbh_available_pct']}%. Using GHS instead of native Overture retains "
         f"{operational_top['building_recall_pct']}% of the native-height top-list buildings and has "
-        f"{operational_top['false_priority_share_of_model_top_score_pct']}% false-priority score.",
+        f"{operational_top['discordant_share_of_model_top_score_pct']}% discordant-list score.",
         "",
         "## Real municipal inventories",
         "",

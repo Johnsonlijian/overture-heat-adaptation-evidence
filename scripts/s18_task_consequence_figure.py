@@ -68,7 +68,7 @@ def main() -> None:
     ax_title.text(
         0.0,
         0.24,
-        "New York links measured street-level heat, survey-grade height pairs and real municipal inventories to test task consequence.",
+        "New York links measured street-level heat, survey-grade height pairs and real municipal inventories to test screening-list sensitivity.",
         fontsize=8.7,
         color=COL["muted"],
     )
@@ -103,7 +103,7 @@ def main() -> None:
     metrics = [
         ("building recall", surveyed["building_recall_pct"], operational["building_recall_pct"]),
         ("score recall", surveyed["heat_weighted_score_recall_pct"], operational["heat_weighted_score_recall_pct"]),
-        ("false priority", surveyed["false_priority_share_of_model_top_score_pct"], operational["false_priority_share_of_model_top_score_pct"]),
+        ("discordant list", surveyed["discordant_share_of_model_top_score_pct"], operational["discordant_share_of_model_top_score_pct"]),
     ]
     y = np.arange(len(metrics))
     h = 0.28

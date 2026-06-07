@@ -57,7 +57,7 @@ def top_decile_metrics(truth_score: np.ndarray, model_score: np.ndarray) -> dict
         "k": int(k),
         "retained": int(len(inter)),
         "recall_pct": round(len(inter) / k * 100, 2),
-        "false_priority_pct": round((k - len(inter)) / k * 100, 2),
+        "discordant_pct": round((k - len(inter)) / k * 100, 2),
         "jaccard": round(len(inter) / len(truth_top | model_top), 3),
     }
 
@@ -158,7 +158,7 @@ def main() -> None:
             "task": "Shadow top-decile priority",
             "metric": "retained_truth_top_decile_pct",
             "value_pct": shadow["recall_pct"],
-            "error_pct": shadow["false_priority_pct"],
+            "error_pct": shadow["discordant_pct"],
         },
         {
             "task": "Canyon H/W class",
@@ -282,7 +282,7 @@ def main() -> None:
         "## Task-facing consequences",
         "",
         f"- Shadow-length top decile: {shadow['retained']}/{shadow['k']} truth-priority buildings retained "
-        f"({shadow['recall_pct']}% recall; {shadow['false_priority_pct']}% false-priority share).",
+        f"({shadow['recall_pct']}% recall; {shadow['discordant_pct']}% discordant-list share).",
         f"- Canyon H/W class at 20 m street width: "
         f"{canyon_details['20.0']['misclassified_pct']}% misclassified; "
         f"deep-canyon recall {canyon_details['20.0']['deep_canyon_recall_pct']}%.",

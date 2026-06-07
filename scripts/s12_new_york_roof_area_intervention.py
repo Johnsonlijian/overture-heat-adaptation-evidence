@@ -3,7 +3,7 @@ s12_new_york_roof_area_intervention.py
 ============================================
 Roof-area-weighted intervention distortion in the New York survey-grade subset.
 
-NY_DECISION_DISTORTION tested height-only task consequences. This script upgrades the cool-roof
+NY_DECISION_DISTORTION tested height-only screening-list sensitivity. This script upgrades the cool-roof
 screening consequence to a footprint-area proxy: a Stage I programme that targets
 large low/mid-rise roofs. USGS-Lidar-sourced Overture heights are treated as
 survey-grade truth; GHS-BUILT-H 100 m AGBH is the model-filled substitute.
@@ -181,8 +181,8 @@ def top_priority_metrics(df: pd.DataFrame) -> dict:
         "model_top_roof_area_m2": round(model_area, 1),
         "retained_truth_top_area_m2": round(retained_area, 1),
         "area_recall_pct": round(retained_area / max(truth_area, 1e-9) * 100, 2),
-        "false_priority_model_top_area_m2": round(false_area, 1),
-        "false_priority_share_of_model_top_area_pct": round(false_area / max(model_area, 1e-9) * 100, 2),
+        "discordant_model_top_area_m2": round(false_area, 1),
+        "discordant_share_of_model_top_area_pct": round(false_area / max(model_area, 1e-9) * 100, 2),
         "jaccard_buildings": round(len(retained) / max(len(truth_top | model_top), 1), 3),
     }
 
@@ -241,7 +241,7 @@ def make_figure(df: pd.DataFrame, confusion: dict, top: dict) -> None:
 
     metrics = [
         ("area recall", top["area_recall_pct"]),
-        ("false priority", top["false_priority_share_of_model_top_area_pct"]),
+        ("discordant list", top["discordant_share_of_model_top_area_pct"]),
         ("building recall", top["building_recall_pct"]),
     ]
     ax2.barh([m[0] for m in metrics], [m[1] for m in metrics], color=["#3A7D44", "#C64E3B", "#4D7EA8"])
@@ -313,8 +313,8 @@ def main() -> None:
         f"- Truth eligible buildings: {top['truth_eligible_buildings']:,}; top-priority k = {top['top_priority_k']:,}.",
         f"- Model list retains {top['building_recall_pct']}% of truth top-priority buildings and "
         f"{top['area_recall_pct']}% of truth top-priority roof area.",
-        f"- False-priority share of model top-priority roof area: "
-        f"{top['false_priority_share_of_model_top_area_pct']}%.",
+        f"- Discordant-list share of model top-priority roof area: "
+        f"{top['discordant_share_of_model_top_area_pct']}%.",
         "",
     ]
     (OUT / "roof_area_distortion_ny_roof_area_intervention_summary.md").write_text("\n".join(lines), encoding="utf-8")

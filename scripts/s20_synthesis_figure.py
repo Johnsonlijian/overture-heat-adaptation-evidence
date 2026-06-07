@@ -124,7 +124,7 @@ def main() -> None:
         ("0.0019%", "median native height\navailability", COL["red"]),
         ("73", "POWER hot-day and\n<5% height triggers", COL["orange"]),
         ("rho=0.73", "height tracks OSM\nfootprint share", COL["teal"]),
-        ("80.40%", "false-priority score in\nNY stress test", COL["red"]),
+        ("80.40%", "discordant-list score in\nNY stress test", COL["red"]),
     ]
     for i, (value, label, color) in enumerate(metrics):
         x = 0.060 + i * 0.180
@@ -189,7 +189,7 @@ def main() -> None:
         w,
         h,
         "D",
-        "Task consequence",
+        "List sensitivity",
         "If substituted height changes the\nscreening list, local validation or\nscale downgrade is required.",
         COL["red"],
     )

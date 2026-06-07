@@ -210,7 +210,7 @@ def decision_metrics(city: str, strict: pd.DataFrame, aware_col: str, aware_labe
     area_top = top_set(d, "area_only_score", k)
     aware_top = top_set(d, aware_col, k)
     intersection = area_top & aware_top
-    false_priority = area_top - aware_top
+    discordant = area_top - aware_top
     aware_denom = float(d.loc[list(aware_top), aware_col].sum()) if aware_top else 0.0
     false_area_denom = float(d.loc[list(area_top), "area_only_score"].sum()) if area_top else 0.0
     try:
@@ -223,12 +223,12 @@ def decision_metrics(city: str, strict: pd.DataFrame, aware_col: str, aware_labe
         "n_scored": int(len(d)),
         "top_k": int(k),
         "top_decile_overlap_pct": len(intersection) / k * 100,
-        "false_priority_count_share_pct": len(false_priority) / k * 100,
+        "discordant_count_share_pct": len(discordant) / k * 100,
         "height_aware_score_retained_by_area_top_pct": (
             float(d.loc[list(intersection), aware_col].sum()) / aware_denom * 100 if aware_denom else np.nan
         ),
-        "area_score_in_false_priority_pct": (
-            float(d.loc[list(false_priority), "area_only_score"].sum()) / false_area_denom * 100 if false_area_denom else np.nan
+        "area_score_in_discordant_pct": (
+            float(d.loc[list(discordant), "area_only_score"].sum()) / false_area_denom * 100 if false_area_denom else np.nan
         ),
         "spearman_area_vs_heightaware": float(rho) if rho == rho else np.nan,
         "median_height_area_top_m": float(d.loc[list(area_top), "gba_height_m"].median()) if area_top else np.nan,
@@ -348,10 +348,10 @@ def make_figure(city_df: pd.DataFrame, metrics: pd.DataFrame) -> None:
     ax_c.barh(y2, plot["top_decile_overlap_pct"], color="#2563EB", label="same top decile")
     ax_c.barh(
         y2,
-        plot["false_priority_count_share_pct"],
+        plot["discordant_count_share_pct"],
         left=plot["top_decile_overlap_pct"],
         color="#DC2626",
-        label="area-only false priority",
+        label="area-only discordant list",
     )
     for yi, (_, r) in enumerate(plot.iterrows()):
         ax_c.text(
@@ -365,9 +365,9 @@ def make_figure(city_df: pd.DataFrame, metrics: pd.DataFrame) -> None:
             fontsize=7,
         )
         ax_c.text(
-            r["top_decile_overlap_pct"] + r["false_priority_count_share_pct"] / 2,
+            r["top_decile_overlap_pct"] + r["discordant_count_share_pct"] / 2,
             yi,
-            f"{r['false_priority_count_share_pct']:.1f}%",
+            f"{r['discordant_count_share_pct']:.1f}%",
             ha="center",
             va="center",
             color="white",
@@ -483,7 +483,7 @@ def main() -> None:
         "",
         "Question: would adding modelled GBA height to high-heat, Overture-native-height-blind trigger cities change a first-pass building priority list compared with footprint area alone?",
         "",
-        "| City | Country | hot days >=35C | Overture buildings | strict GBA-height matches | match % | dominant footprint source | area-vs-height*area top-decile overlap % | false-priority share % | height-aware score retained by area top % |",
+        "| City | Country | hot days >=35C | Overture buildings | strict GBA-height matches | match % | dominant footprint source | area-vs-height*area top-decile overlap % | discordant-list share % | height-aware score retained by area top % |",
         "| --- | --- | ---: | ---: | ---: | ---: | --- | ---: | ---: | ---: |",
     ]
     height_area = metrics[metrics["height_aware_score"].eq("height_area")].set_index("city_name") if not metrics.empty else pd.DataFrame()
@@ -494,7 +494,7 @@ def main() -> None:
             f"{r['overture_buildings_exact']:,} | {r['strict_height_matches']:,} | "
             f"{r['strict_height_match_pct_of_overture']:.1f} | {r['dominant_overture_geometry_source']} | "
             f"{float(m['top_decile_overlap_pct']) if m is not None else np.nan:.1f} | "
-            f"{float(m['false_priority_count_share_pct']) if m is not None else np.nan:.1f} | "
+            f"{float(m['discordant_count_share_pct']) if m is not None else np.nan:.1f} | "
             f"{float(m['height_aware_score_retained_by_area_top_pct']) if m is not None else np.nan:.1f} |"
         )
     lines += [

@@ -1,19 +1,10 @@
-# Supplementary Source Data
+# Source Data
 
-This directory contains derived, non-sensitive tables and summaries used to generate the manuscript figures and supplementary diagnostics. Raw third-party datasets are not redistributed.
+This folder contains derived, non-sensitive source-data tables for the Nature Cities submission. Raw third-party datasets are not redistributed. The tables report aggregated, matched or sampled outputs needed to interpret the manuscript figures, supplementary tables and design-weighted estimates.
 
-Main figure mapping:
+Key additions for sampling transparency:
 
-- Fig. 1: `ucdb_heat_readiness/`, `design_weighted_ucdb/`, `all_trigger_provenance/`
-- Fig. 2: synthesis values from source-data summaries and figure-generation code
-- Fig. 3: provenance and height-readiness summaries in the code archive and source-data summaries
-- Fig. 4: reliability and New York accuracy summaries in the code archive and derived outputs
-- Fig. 5: `non_us_truth_task/`, `trigger_city_bridge/`, `nyc_measured_heat/`
+- `design_weighted_ucdb/ucdb_sample_transparency.csv`: sampled-centre status, retained flag, hot-day counts, native-height availability, trigger flags, simulated inclusion probability and design weight.
+- `design_weighted_ucdb/simulated_inclusion_probabilities.csv`: UCDB centre inclusion probabilities estimated by repeated simulation of the capped sampling design.
 
-Supplementary figure mapping:
-
-- Fig. S1-S6: claim ladder, provenance, EO-height and reliability/accuracy diagnostics
-- Fig. S7-S12: official truth windows, GHS-OBAT, GlobalBuildingAtlas, New York task diagnostics and CNMI stress test
-- Fig. S13-S18: 30-city headline, LCZ context, all-trigger provenance, official-truth task windows, trigger-city bridge and measured-heat municipal inventories
-
-Provider links, versions and redistribution boundaries are listed in `DATASETS_AND_LINKS.csv`. A workbook index is provided as `Source_Data_Index.xlsx`.
+Use provider links in `DATASETS_AND_LINKS.csv` to obtain raw external datasets under their original terms.

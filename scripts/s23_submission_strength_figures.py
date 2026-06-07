@@ -272,10 +272,10 @@ def make_figs16() -> None:
 
     labels = ["height\npriority", "height*area\npriority"]
     retained = gba_top["retained_count_share_pct"].values
-    false_priority = gba_top["false_priority_count_share_pct"].values
+    discordant = gba_top["discordant_count_share_pct"].values
     ax_d.bar(labels, retained, color=TEAL, label="truth top-list retained")
-    ax_d.bar(labels, false_priority, bottom=retained, color=RED, label="false-priority count share")
-    for i, (r, f) in enumerate(zip(retained, false_priority)):
+    ax_d.bar(labels, discordant, bottom=retained, color=RED, label="discordant-list count share")
+    for i, (r, f) in enumerate(zip(retained, discordant)):
         ax_d.text(i, r / 2, f"{r:.1f}%", ha="center", va="center", color="white", fontweight="bold")
         ax_d.text(i, r + f / 2, f"{f:.1f}%", ha="center", va="center", color="white", fontweight="bold")
     ax_d.set_ylim(0, 100)

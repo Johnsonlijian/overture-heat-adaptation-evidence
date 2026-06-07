@@ -1,4 +1,4 @@
-﻿# Public Repository Boundary
+# Public Repository Boundary
 
 This repository contains reproducibility code, derived source-data tables, source registries and generated figures for audit and review.
 

@@ -1,3 +1,3 @@
-score,n_valid,top_n,retained_n,false_priority_n,retained_count_share_pct,truth_score_retained_share_pct,false_priority_count_share_pct,model_score_false_priority_share_pct,comparison,city_name
+score,n_valid,top_n,retained_n,discordant_n,retained_count_share_pct,truth_score_retained_share_pct,discordant_count_share_pct,model_score_discordant_share_pct,comparison,city_name
 height_top_decile,9195,920,409,511,44.45652173913043,51.08739452953844,55.54347826086956,50.20033723089065,GlobalBuildingAtlas Arnhem vs 3DBAG official truth,Arnhem 3DBAG window
 height_area_top_decile,9195,920,691,229,75.10869565217392,96.29296620128908,24.89130434782609,2.8172867993718844,GlobalBuildingAtlas Arnhem vs 3DBAG official truth,Arnhem 3DBAG window
