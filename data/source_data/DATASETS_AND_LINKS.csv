@@ -5,7 +5,7 @@ NASA POWER,global point heat-exposure context,NASA,https://power.larc.nasa.gov/
 Local Climate Zone global map,urban-form context,Demuzere et al. / global LCZ,https://lcz-generator.rub.de/
 3DBAG,official Netherlands height truth windows,3DBAG / TU Delft,https://3dbag.nl/
 GHS-OBAT,official modelled building-attribute comparator,European Commission Joint Research Centre,https://ghsl.jrc.ec.europa.eu/
-GlobalBuildingAtlas,global 3D building product comparator,GlobalBuildingAtlas,https://globalbuildingatlas.org/
+GlobalBuildingAtlas,global 3D building product comparator,GlobalBuildingAtlas / ESSD 2025 dataset,https://doi.org/10.5194/essd-17-6647-2025
 GHS-BUILT-H,Earth-observation height substitute,European Commission Joint Research Centre,https://ghsl.jrc.ec.europa.eu/
 NYC Hyperlocal Temperature Monitoring,measured intra-urban heat stress test,NYC Open Data,https://data.cityofnewyork.us/
 NYC municipal programme inventories,programme-inventory evidence-readiness matches,NYC Open Data,https://data.cityofnewyork.us/

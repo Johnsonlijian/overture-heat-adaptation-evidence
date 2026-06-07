@@ -55,7 +55,7 @@ for p in (EXT, OUT, FIG):
 def download(url: str, path: Path) -> None:
     if path.exists() and path.stat().st_size > 0:
         return
-    req = urllib.request.Request(url, headers={"User-Agent": "IMUT EXTERNAL_PRODUCT_VALIDATION GHS-OBAT product audit"})
+    req = urllib.request.Request(url, headers={"User-Agent": "anonymous-urban-heat-evidence-audit/1.0"})
     with urllib.request.urlopen(req, timeout=240) as resp, path.open("wb") as fh:
         shutil.copyfileobj(resp, fh)
 

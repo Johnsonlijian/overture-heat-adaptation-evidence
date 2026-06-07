@@ -1,0 +1,15 @@
+figure,panel,source_data_file,purpose
+Fig. 1,"a,c",ucdb_heat_readiness/ucdb_300city_heat_readiness.csv,"mapped UCDB sample, native-height availability, heat trigger and population context"
+Fig. 1,b,all_trigger_provenance/all_trigger_geometry_sources.csv,source split for heat-exposed height-poor trigger centres
+Fig. 1,b,all_trigger_provenance/all_trigger_height_sources.csv,height-source split for trigger centres
+Fig. 2,all,README_SOURCE_DATA.md,"conceptual task-gate synthesis; data sources listed in this index support the empirical panels"
+Fig. 3,"a,b",ucdb_heat_readiness/ucdb_300city_heat_readiness.csv,feature-volume and native-height availability relationship
+Fig. 3,"b,c",all_trigger_provenance/all_trigger_per_center_provenance.csv,per-centre provenance and height-availability diagnostics
+Fig. 3,c,all_trigger_provenance/all_trigger_geometry_sources.csv,geometry-source decomposition
+Fig. 4,"a,b",non_us_truth_task/overture_3dbag_city_evidence.csv,official 3DBAG truth-window height availability comparison
+Fig. 4,c,non_us_truth_task/overture_3dbag_highrise_and_toplist_tasks.csv,3DBAG task-window list diagnostics
+Fig. 4,d,nyc_measured_heat/nyc_municipal_outcome_summary.csv,New York municipal and measured-heat sensitivity summaries
+Fig. 5,"a,b",non_us_truth_task/gba_arnhem_official_truth_summary.csv,GlobalBuildingAtlas Arnhem truth-window comparison
+Fig. 5,c,trigger_city_bridge/trigger_city_decision_metrics.csv,five trigger-city product-height bridge and list-overlap metrics
+Fig. 5,d,nyc_measured_heat/nyc_municipal_outcome_summary.csv,New York sensor-linked heat list sensitivity
+Supplementary Tables,1-8,design_weighted_ucdb/design_weighted_estimates.csv,design-weighted and sensitivity estimates used in Supplementary Tables

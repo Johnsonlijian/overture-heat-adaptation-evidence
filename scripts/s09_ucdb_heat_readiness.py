@@ -81,7 +81,7 @@ def fetch_power(row: pd.Series) -> dict:
         "format": "JSON",
     }
     url = "https://power.larc.nasa.gov/api/temporal/daily/point?" + urllib.parse.urlencode(params)
-    req = urllib.request.Request(url, headers={"User-Agent": "IMUT UCDB_SAMPLE UCDB heat-readiness audit"})
+    req = urllib.request.Request(url, headers={"User-Agent": "anonymous-urban-heat-evidence-audit/1.0"})
     with urllib.request.urlopen(req, timeout=90) as resp:
         payload = json.loads(resp.read().decode("utf-8"))
     cache.write_text(json.dumps(payload), encoding="utf-8")

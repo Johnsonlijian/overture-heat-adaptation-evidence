@@ -59,7 +59,7 @@ for p in (OUT, FIG, EXT, TILE_GZ, TILE_GPKG):
 def download(url: str, path: Path) -> None:
     if path.exists() and path.stat().st_size > 0:
         return
-    req = urllib.request.Request(url, headers={"User-Agent": "IMUT EXTERNAL_PRODUCT_VALIDATION 3DBAG truth-window audit"})
+    req = urllib.request.Request(url, headers={"User-Agent": "anonymous-urban-heat-evidence-audit/1.0"})
     with urllib.request.urlopen(req, timeout=180) as resp, path.open("wb") as fh:
         shutil.copyfileobj(resp, fh)
 
