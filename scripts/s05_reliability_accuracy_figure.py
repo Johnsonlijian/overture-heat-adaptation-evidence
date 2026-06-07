@@ -194,8 +194,6 @@ def save_figure(city: pd.DataFrame, rel: dict, pairs: pd.DataFrame, ny: dict) ->
     ax_d.spines[["top", "right"]].set_visible(False)
     ax_d.grid(axis="y", color=COL["grid"], lw=0.45, alpha=0.5)
 
-    fig.suptitle("Fig. 4 | Available height is an upper bound on reliable vertical evidence",
-                 x=0.035, y=0.997, ha="left", fontsize=12.5, weight="bold")
     for ext in ("png", "svg", "pdf"):
         dpi = 300 if ext == "png" else None
         fig.savefig(os.path.join(FIG, f"Fig4_reliability_accuracy.{ext}"),

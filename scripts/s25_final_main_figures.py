@@ -142,10 +142,9 @@ def make_fig1() -> None:
     ax_scatter = fig.add_subplot(gs[2, 2:])
 
     ax_title.axis("off")
-    ax_title.text(0, 0.78, "Fig. 1 | Heat-exposed mapped cities lack native vertical evidence", fontsize=14, weight="bold", color=COL["ink"])
     ax_title.text(
         0,
-        0.24,
+        0.56,
         "GHS-UCDB urban-centre polygons reveal where open footprints are horizontally abundant but vertically unready for building-scale heat screening.",
         fontsize=8.8,
         color=COL["muted"],
@@ -357,7 +356,6 @@ def make_fig5() -> None:
     ax_d.legend(frameon=False, loc="upper center", bbox_to_anchor=(0.52, -0.13), ncol=1, fontsize=6.8)
     ax_d.grid(axis="y", color=COL["grid"], linewidth=0.6)
 
-    fig.suptitle("Fig. 5 | Coverage becomes readiness only after task validation", fontsize=11.5, fontweight="bold", x=0.02, ha="left")
     save(fig, "Fig5")
 
     shutil.copy2(FINAL_NC_FIG / "Fig_TRIGGER_CITY_STAGE1_BRIDGE_trigger_city_stage1_bridge.png", FINAL_NC_FIG / "FigS17.png")

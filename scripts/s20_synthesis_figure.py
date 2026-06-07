@@ -108,10 +108,9 @@ def main() -> None:
     ax.set_ylim(0, 1)
     ax.axis("off")
 
-    ax.text(0.035, 0.960, "Fig. 2 | Vertical evidence gaps constrain heat-adaptation screening", fontsize=14.3, weight="bold", color=COL["ink"])
     ax.text(
         0.035,
-        0.918,
+        0.948,
         "The central mechanism is a supply-demand mismatch: two-dimensional building maps scale globally, while task-ready vertical evidence remains source-bound.",
         fontsize=8.7,
         color=COL["dark"],
